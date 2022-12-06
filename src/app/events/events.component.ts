@@ -1,4 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EventService } from '../event.service';
 
 @Component({
@@ -10,8 +12,8 @@ export class EventsComponent implements OnInit {
 
 
   ev:any=[];
-  name:string;
-  constructor(private even:EventService) { }
+  
+  constructor(private even:EventService, private router:Router) { }
 
   ngOnInit(): void {
     this.even.getevents().subscribe(
@@ -21,7 +23,17 @@ export class EventsComponent implements OnInit {
         console.log(this.ev)
       },
       
-      err=>console.log(err)
+      err=>
+      {
+        // console.log(err)
+        if(err instanceof HttpErrorResponse)
+        {
+          if(err.status===401)
+          {
+            this.router.navigate(['/login'])
+          }
+        }
+      }
       
 
       

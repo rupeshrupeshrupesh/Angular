@@ -15,6 +15,8 @@ export class AuthService {
   constructor(private http:HttpClient,
     private router:Router) { }
 
+  
+
   registeruser(user:any)
   {
 return this.http.post<any>(this.registerurl,user);
@@ -33,6 +35,6 @@ return this.http.post<any>(this.registerurl,user);
   logoutUser()
   {
     localStorage.removeItem('token')
-    this.router.navigate(['/events'])
+    this.router.navigate(['/login'])
   }
 }

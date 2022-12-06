@@ -1,0 +1,79 @@
+<!-- <p>book-ticket works!</p> -->
+<!-- <h2>Available Movie</h2> -->
+<br />
+<div *ngIf="show == 0">
+  <button
+    type="button"
+    class="btn btn-primary btn-lg btn-block"
+    (click)="availableMovie()"
+    style="
+      --bs-btn-padding-y: 1.5rem;
+      --bs-btn-padding-x: 2rem;
+      --bs-btn-font-size: 1.25rem;
+      --bs-btn-border-radius: 5.5rem;
+    "
+  >
+    Available Movie
+  </button>
+</div>
+<nav *ngIf="show == 1">
+  <br />
+  <div *ngFor="let na of moviearry">
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="GetInformation()"
+    >
+      {{ na.Title }}
+    </button>
+  </div>
+
+  <div>
+    <br />
+    <button
+      (click)="hide()"
+      type="button"
+      class="btn btn-primary"
+      style="
+        --bs-btn-padding-y: 0.25rem;
+        --bs-btn-padding-x: 0.5rem;
+        --bs-btn-font-size: 0.75rem;
+      "
+    >
+      Custom button
+    </button>
+  </div>
+</nav>
+
+<nav *ngIf="show == 2">
+    <!-- <div *ngFor="let na of moviearry">
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="GetInformation()"
+        >
+          {{ na.Title }}
+        </button>
+      </div> -->
+  <div class="row">
+    <div class="col-xs-12">
+     <form >
+        <div class="row">
+            <div class="col-xs-12">
+               <button type="submit" class="btn btn-success">save</button>
+               <button type="submit" class="btn btn-danger">cancel</button>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                </div>
+            </div>
+        </div>    
+     </form>
+    </div>
+  </div>
+  <h2></h2>
+</nav>

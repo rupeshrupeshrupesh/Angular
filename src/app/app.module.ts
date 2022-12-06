@@ -15,6 +15,8 @@ import { AuthService } from './auth.service';
 import { EventService } from './event.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterService } from './token-inter.service';
+import { HubComponent } from './hub/hub.component';
+import { BookTicketComponent } from './book-ticket/book-ticket.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { TokenInterService } from './token-inter.service';
     EventsComponent,
     SpecialComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HubComponent,
+    BookTicketComponent
   ],
   imports: [
     BrowserModule,
