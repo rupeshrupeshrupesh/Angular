@@ -1,79 +1,79 @@
-<!-- <p>book-ticket works!</p> -->
-<!-- <h2>Available Movie</h2> -->
-<br />
-<div *ngIf="show == 0">
-  <button
-    type="button"
-    class="btn btn-primary btn-lg btn-block"
-    (click)="availableMovie()"
-    style="
-      --bs-btn-padding-y: 1.5rem;
-      --bs-btn-padding-x: 2rem;
-      --bs-btn-font-size: 1.25rem;
-      --bs-btn-border-radius: 5.5rem;
-    "
-  >
-    Available Movie
-  </button>
-</div>
-<nav *ngIf="show == 1">
-  <br />
-  <div *ngFor="let na of moviearry">
-    <button
-      type="button"
-      class="btn btn-outline-primary"
-      (click)="GetInformation()"
-    >
-      {{ na.Title }}
-    </button>
-  </div>
-
-  <div>
+<nav>
+  <nav *ngIf="show == 1">
     <br />
-    <button
-      (click)="hide()"
-      type="button"
-      class="btn btn-primary"
-      style="
-        --bs-btn-padding-y: 0.25rem;
-        --bs-btn-padding-x: 0.5rem;
-        --bs-btn-font-size: 0.75rem;
-      "
-    >
-      Custom button
-    </button>
-  </div>
-</nav>
 
-<nav *ngIf="show == 2">
-    <!-- <div *ngFor="let na of moviearry">
-        <button
-          type="button"
-          class="btn btn-outline-primary"
-          (click)="GetInformation()"
-        >
-          {{ na.Title }}
-        </button>
-      </div> -->
-  <div class="row">
-    <div class="col-xs-12">
-     <form >
-        <div class="row">
-            <div class="col-xs-12">
-               <button type="submit" class="btn btn-success">save</button>
-               <button type="submit" class="btn btn-danger">cancel</button>
+    <div class="D-flex">
+      <div class="row mt-5">
+        <div class="col-md-4 mb-3" style="margin-right: 542px">
+          <div class="card text-center" style="margin: -35px">
+            <div class="card-body" style="width: 418px">
+              <h5 class="card-title" style="margin-right: 80px">
+                {{ valuenew.Title }}
+              </h5>
+              <h6 class="card-title" style="margin-right: 80px">
+                {{ valuenew.Year }}
+              </h6>
+              <h6 class="card-title" style="margin-right: 80px">
+                {{ valuenew.Runtime }}
+              </h6>
+              <!-- <a href=poster></a> -->
+              <img style="height: 265px; width: 196px; margin-bottom: 17px" [src]="valuenew.Poster" alt="No image found"
+                style="margin-right: 67px; height: 390px; width: 271px" />
+              <br />
+
+              <button class="btn btn-primary" routerLink="/book" style="margin-right: 80px; margin-top: 10px" (click)="bookevent(valuenew)">
+                Book
+              </button>
             </div>
-
+          </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                </div>
-            </div>
-        </div>    
-     </form>
+      </div>
+
+      <div class="flex2" style="margin-left: -315px">
+        <div class="border" style="
+            height: 465px;
+            width: 350px;
+            margin-top: 17px;
+            text-align: center;
+          ">
+          <div class="dropdown" style="padding: 25px; line-height: 36px">
+            <h3 style="text-align: center; margin-top: 36px">
+              {{ valuenew.Title }}
+            </h3>
+            <hr />
+            <br /><br />
+
+            <strong class="">Movie Time</strong>
+            <button style="align-items: center" class="btn btn-secondary dropdown-toggle" href="#" role="button"
+              id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Movie Timing
+              <br />
+
+              <div>
+                <select name="language" id="language">
+                  <option value="" disabled>Movie Time</option>
+                  <option *ngFor="let Time of MovieTime" value="Time">
+                    {{ Time }}
+                  </option>
+                </select>
+              </div>
+            </button>
+
+            <br /><br />
+            <Strong>Available Seats</Strong>
+
+            <button class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Available Seat
+
+              <select name="language" id="language">
+                <option disabled>--Availble Seats--</option>
+                <option *ngFor="let Seat of MovieSeats">{{ Seat }}</option>
+              </select>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <h2></h2>
+  </nav>
 </nav>

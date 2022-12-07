@@ -136,7 +136,7 @@ router.get('/events',verifyToken, (req,res)=>{
 
 })
 
-router.get('/hub',verifyToken,(req,res)=>
+router.get('/hub',(req,res)=>
 {
     let h=[
         {

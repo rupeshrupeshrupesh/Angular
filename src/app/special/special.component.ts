@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from '../event.service';
+import { hub } from '../model/data';
+import { SubjectServiceService } from '../subject-service.service';
 
 
 @Component({
@@ -12,15 +14,17 @@ import { EventService } from '../event.service';
 export class SpecialComponent implements OnInit {
 
   constructor(private even:EventService,
-    private router:Router) { }
+    private router:Router,
+    private serve:SubjectServiceService) { }
 
   special:any=[];
+  bookingdata:hub
   ngOnInit(): void {
     this.even.getspecial().subscribe(
       res=>
       {
         this.special=res
-        console.log(res);
+        // console.log(res);
         
       },
       err=>
@@ -33,19 +37,19 @@ export class SpecialComponent implements OnInit {
           }
         }
       }
-        // console.log(err),
-    )
-    //   }
-
-    // this.even.getspecial().subscribe(
-    //   res=>
-    //   {
-    //     this.special=res;
-    //     console.log(this.special);
-    //   },
-    //   err=>console.log(err),
       
-    // )
+    )
+    this.serve.bookticket.subscribe(res=>
+      {
+
+        console.log(res);
+        
+        this.bookingdata=res
+        // this.router.navigate(['/special']);
+
+      }
+      )
+
     }
   }
       

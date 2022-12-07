@@ -17,6 +17,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterService } from './token-inter.service';
 import { HubComponent } from './hub/hub.component';
 import { BookTicketComponent } from './book-ticket/book-ticket.component';
+import { SubjectServiceService } from './subject-service.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { BookTicketComponent } from './book-ticket/book-ticket.component';
     
 
   ],
-  providers: [AuthService,AuthGuard, EventService,
+  providers: [AuthService,SubjectServiceService,AuthGuard, EventService,
     {
       provide:HTTP_INTERCEPTORS,
      useClass: TokenInterService,

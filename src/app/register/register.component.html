@@ -14,10 +14,10 @@
           </div>
           <div class="form-group">
             <label for="">Password</label>
-            <input [(ngModel)]="registerUserData.password" name="password"  type="password" class="form-control rounded-0" required />
+            <input   [(ngModel)]="registerUserData.password" name="password"  type="password" class="form-control rounded-0" required />
             <br>
         </div>
-        <button (click)="registeruser()" type="button" class="btn btn-primary float-right" style="margin-left: 36%; border-radius: 20px;">Register</button>
+        <button (click)="registeruser()" [disabled]="registerUserData.email.length==0||registerUserData.password.length<4"  type="button" class="btn btn-primary float-right" style="margin-left: 36%; border-radius: 20px;">Register</button>
         </form>
       </div>
     </div>
