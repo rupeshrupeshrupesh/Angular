@@ -4,7 +4,6 @@ export class hub{
     public Runtime:string;
     public Poster:string
 
-
 }
 
 // valuenew:any={

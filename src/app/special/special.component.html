@@ -1,16 +1,23 @@
-<!-- <div class="row mt-5">
-    <div class="col-md-4 mb-3" *ngFor="let event of special">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">{{event.name}}</h5>
-                <p class="card-text">{{event.description}}</p>
-                <a href="#" class="btn btn-success">Buy Tickets</a>
-            </div>
-            <div class="card-footer text-muted">
-                {{event.date | date:'shortDate'}}
-            </div>
-        </div>
-    </div>
-</div> -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">sr.no</th>
+      <th scope="col">Movie Name</th>
+      <th scope="col">Time</th>
+      <th scope="col">Seat</th>
+      <th scope="col">Status</th>
+      <th scope="col">Realse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-active" *ngIf="bookdata">
+      <th scope="row">1</th>
+      <td>{{bookdata.Title}}</td>
+      <td>{{bookdata.time}}</td>
+      <td>{{bookdata.seat}}</td>
+      <td>{{bookdata.status}}</td>
+      <td>{{bookdata.Year}}</td>
 
-<h1>hiii</h1>
+    </tr>
+  </tbody>
+</table>

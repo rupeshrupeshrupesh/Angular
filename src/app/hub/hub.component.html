@@ -5,19 +5,12 @@
                 <h5 class="card-title">{{event.Title}}</h5>
                 <h6 class="card-title">{{event.Runtime}}</h6>
                 <h6 class="card-title">{{event.Year}}</h6>
-                <!-- <a href=poster></a> -->
                 <img style="height: 265px;
                 width: 196px;
                 margin-bottom: 17px;" [src]="event.Poster" alt="No image found">
                 <br>
-
-                <!-- <a href="../comp1/159533631-1500x1000.jpg">{{event.Year}}</a> -->
-                <!-- <p class="card-text">{{event.description}}</p> -->
-
                 <button class="btn btn-primary" routerLink="/book" (click)="callbookticket(event)">Book</button>
-                <!-- <a href="#" class="btn btn-primary" (click)="orderevent()">Order </a> -->
             </div>
-          
         </div>
     </div>
 </div>

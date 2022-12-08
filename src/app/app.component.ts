@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import{HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { AuthService } from './auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'PipeAndInterceptor';
   // public auth:AuthService
-  constructor(private http:HttpClient,public auth:AuthService){
+  constructor(private http: HttpClient, public auth: AuthService) {
 
   }
 
-  myObservable=new Observable((obs)=>{
+  myObservable = new Observable((obs) => {
     console.log("observable starts");
 
     setTimeout(() => {
       obs.next("1");
-      
+
     }, 1000);
     setTimeout(() => {
       obs.next("2");
@@ -27,43 +27,43 @@ export class AppComponent implements OnInit{
 
 
     setTimeout(() => {
-      
-    obs.error(new Error('something went to wrong'));
-}, 1000);
+
+      obs.error(new Error('something went to wrong'));
+    }, 1000);
 
     setTimeout(() => {
-      
-    obs.complete();
+
+      obs.complete();
     }, 1000);
-   
 
-  
 
-    
+
+
+
 
 
 
 
   });
-  ngOnInit(){
-    this.myObservable.subscribe((vol)=>{
-        console.log(vol);
-        
-    },
-    (error)=>{
-      // alert(error);
+  ngOnInit() {
+    this.myObservable.subscribe((vol) => {
+      console.log(vol);
 
     },
-    ()=>{
-      alert('obervable complte')
-    }
+      (error) => {
+        // alert(error);
+
+      },
+      () => {
+        alert('obervable complte')
+      }
     );
 
   }
-  username:string
-  password:string
+  username: string
+  password: string
 
-  setvalue(){
+  setvalue() {
 
   }
 

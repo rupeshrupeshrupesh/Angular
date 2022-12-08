@@ -16,12 +16,12 @@
               <h6 class="card-title" style="margin-right: 80px">
                 {{ valuenew.Runtime }}
               </h6>
-              <!-- <a href=poster></a> -->
               <img style="height: 265px; width: 196px; margin-bottom: 17px" [src]="valuenew.Poster" alt="No image found"
                 style="margin-right: 67px; height: 390px; width: 271px" />
               <br />
 
-              <button class="btn btn-primary" routerLink="/book" style="margin-right: 80px; margin-top: 10px" (click)="bookevent(valuenew)">
+              <button class="btn btn-primary" routerLink="/special" style="margin-right: 80px; margin-top: 10px"
+                (click)="bookevent(valuenew)">
                 Book
               </button>
             </div>
@@ -50,10 +50,10 @@
               <br />
 
               <div>
-                <select name="language" id="language">
+                <select name="language" id="language" #tickettime (change)="onselected(tickettime.value)">
                   <option value="" disabled>Movie Time</option>
-                  <option *ngFor="let Time of MovieTime" value="Time">
-                    {{ Time }}
+                  <option *ngFor="let time of MovieTime" [value]="time">
+                    {{ time }}
                   </option>
                 </select>
               </div>
@@ -66,9 +66,11 @@
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Available Seat
 
-              <select name="language" id="language">
+              <select name="language" id="language" #ticketseats (change)="onselected1(ticketseats.value)">
                 <option disabled>--Availble Seats--</option>
-                <option *ngFor="let Seat of MovieSeats">{{ Seat }}</option>
+                <option *ngFor="let Seat of MovieSeats" [value]="Seat">
+                  {{ Seat }}
+                </option>
               </select>
             </button>
           </div>

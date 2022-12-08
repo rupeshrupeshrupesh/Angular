@@ -1,15 +1,13 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, Subject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class SubjectServiceService {
-
-  constructor() { }
-
+  constructor() {}
 
   eventname = new BehaviorSubject<any>(null);
 
-  bookticket = new BehaviorSubject<any>(null); 
+  bookticket = new BehaviorSubject<any>(null);
 }

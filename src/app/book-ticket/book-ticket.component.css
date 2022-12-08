@@ -1,11 +1,12 @@
-.row{
+.row {
 
 
     /* display: block; */
     /* border: 5px solid black; */
     /* display: inline; */
 }
-form{
+
+form {
     /* display: inline block; */
     /* display: flexbox; */
     border: 2px solid rgb(59, 56, 56);
@@ -18,14 +19,16 @@ form{
     display: flex;
     margin-right: 313px;
 }
+
 .flex2 {
     flex: 1;
     margin-left: -315px;
     /* display: inline; */
 }
-.dropdown{
 
-/* border-radius: 10px solid black */
+.dropdown {
+
+    /* border-radius: 10px solid black */
 
 
 }

@@ -1,16 +1,40 @@
-<div class="row mt-5">
-    <div class="col-md-4 mb-3" *ngFor="let event of ev">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">{{event.name}}</h5>
-                <p class="card-text">{{event.description}}</p>
-                <a href="#" class="btn btn-primary">Buy Tickets</a>
-            </div>
-            <div class="card-footer text-muted">
-                {{event.date | date:'shortDate'}}
-            </div>
-        </div>
-    </div>
+<div *ngIf="show==0" class="btn-group" role="group" aria-label="Basic example"
+    style="margin: 29px; align-items: center; margin-left: 133px;">
+    <button type="button" class="btn btn-secondary" style="height: 75px ;width: 250px;"
+        (click)="availableMovies()">Available Movie</button>
+    <button type="button" class="btn btn-secondary" style="height: 75px;width: 250px;"
+        (click)="hidebutton()">Hide</button>
+    <button type="button" class="btn btn-secondary" style="height: 75px;width: 250px;"
+        (click)="appcomponant()">Done</button>
+
+
+
 </div>
 
-<!-- {{ev.name}} -->
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+<div *ngIf="box==1" #myDIV class="mymove">
+
+
+
+    <div *ngFor="let value of nama">
+        <ul class="list-group cProductsList">
+
+
+            <li class="list-group-item d-flex">
+                <p class="p-0 m-0 flex-grow-1"> {{value.Title}}</p>
+                <button class="btn-success" (click)="donebutton()">Book</button>
+            </li>
+
+        </ul>
+    </div>
+
+</div>

@@ -1,30 +1,29 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="#" class="navbar-brand" routerLink="/hub" routerLinkActive="active" >Eventhub</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span
-        class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav " style="margin-right:auto;">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/events" routerLinkActive="active"> Events</a>
-        
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/special" routerLinkActive="active">Booking</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav mr-50">
-        <a class="nav-link" *ngIf="!auth.loggedIn()"  routerLink="/login" routerLinkActive="active">Login</a>
-        <a class="nav-link" *ngIf="!auth.loggedIn()"  routerLink="/register" routerLinkActive="active">Register</a>
-        <a class="nav-link" style="cursor: pointer;" *ngIf="auth.loggedIn()" (click)="auth.logoutUser()"  >Logout</a>
-      
+  <a href="#" class="navbar-brand" routerLink="/hub" routerLinkActive="active">Eventhub</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span
+      class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav " style="margin-right:auto;">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/events" routerLinkActive="active"> Events</a>
 
-        
-        
-      </ul>
-    </div>
-    </nav>
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/special" routerLinkActive="active">Booking</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-50">
+      <a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+      <a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+      <a class="nav-link" style="cursor: pointer;" *ngIf="auth.loggedIn()" (click)="auth.logoutUser()">Logout</a>
+
+
+
+
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
