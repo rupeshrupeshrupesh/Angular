@@ -10,10 +10,9 @@ import { AuthService } from './auth.service';
 export class AppComponent implements OnInit {
   title = 'PipeAndInterceptor';
   // public auth:AuthService
-  constructor(private http: HttpClient, public auth: AuthService) {
+  constructor(private http: HttpClient, public auth: AuthService) {}
 
-  }
-
+  
   myObservable = new Observable((obs) => {
     console.log("observable starts");
 
@@ -65,6 +64,12 @@ export class AppComponent implements OnInit {
 
   setvalue() {
 
+  }
+
+  value="";
+  method(value:any)
+  {
+    this.value=value;
   }
 
   //rxjs  

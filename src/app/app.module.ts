@@ -18,6 +18,10 @@ import { TokenInterService } from './token-inter.service';
 import { HubComponent } from './hub/hub.component';
 import { BookTicketComponent } from './book-ticket/book-ticket.component';
 import { SubjectServiceService } from './subject-service.service';
+import { AngularLifeComponent } from './angular-life/angular-life.component';
+import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
+import { ChildRoutesComponent } from './child-routes/child-routes.component';
+import { NestedRoutesComponent } from './nested-routes/nested-routes.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { SubjectServiceService } from './subject-service.service';
     LoginComponent,
     RegisterComponent,
     HubComponent,
-    BookTicketComponent
+    BookTicketComponent,
+    AngularLifeComponent,
+    LazyLoadingComponent,
+    ChildRoutesComponent,
+    NestedRoutesComponent
   ],
   imports: [
     BrowserModule,

@@ -7,19 +7,23 @@
     <ul class="navbar-nav " style="margin-right:auto;">
       <li class="nav-item">
         <a class="nav-link" routerLink="/events" routerLinkActive="active"> Events</a>
+        <!-- <a class="nav-link" routerLink="/angular" routerLinkActive="/angular">Angular life cycle</a> -->
 
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/special" routerLinkActive="active">Booking</a>
+        
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/lazy" routerLinkActive="active">lazy-loading</a>
+        
+      </li>
+      
     </ul>
     <ul class="navbar-nav mr-50">
       <a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
       <a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
       <a class="nav-link" style="cursor: pointer;" *ngIf="auth.loggedIn()" (click)="auth.logoutUser()">Logout</a>
-
-
-
 
     </ul>
   </div>
@@ -27,3 +31,6 @@
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+<app-child-routes   [parentdata]=title  ></app-child-routes>
+<app-nested-routes (m)="method($event)" ></app-nested-routes>
+{{value}}
